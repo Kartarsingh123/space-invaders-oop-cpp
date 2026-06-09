@@ -1,28 +1,35 @@
-# Space Invaders — C++ & Raylib
+# 🎮 Space Invaders — OOP C++ Game
 
-A Space Invaders arcade game built from scratch in C++ using the Raylib graphics library. I designed the whole thing around OOP — every game element is its own class, and they all connect through a shared base class.
+![C++](https://img.shields.io/badge/Language-C%2B%2B17-blue?style=flat-square)
+![Raylib](https://img.shields.io/badge/Library-Raylib-red?style=flat-square)
+![OOP](https://img.shields.io/badge/Concepts-OOP-green?style=flat-square)
+![IBA](https://img.shields.io/badge/Institute-IBA%20Karachi-yellow?style=flat-square)
 
-It started as a single-file project, then I refactored it into a proper class hierarchy with header files. That refactor taught me more about OOP than anything else.
+A Space Invaders arcade game built from scratch in **C++** using the **Raylib** graphics library. Every game element is its own class — all connected through a shared abstract base class.
 
----
-
-## Features
-
-- Player spaceship with left/right movement and shooting
-- Alien grid that moves side to side and descends toward you
-- Aliens fire back — so you actually have to dodge
-- Collision detection for both player and alien bullets
-- Score system — 10 points per alien killed
-- 3 lives before game over
-- Win screen when all aliens are cleared
-- Game over screen with restart option (`R` to restart)
-- Smooth 60 FPS gameplay loop
+It started as a single-file project, then I refactored it into a proper class hierarchy with header files. That refactor taught me more about OOP design than anything else.
 
 ---
 
-## OOP Design
+## 🚀 Features
 
-| Concept | How I applied it |
+- 🚀 Player-controlled spaceship with smooth movement
+- 👾 Alien grid that moves side to side and descends toward you
+- 🔫 Player shooting mechanics
+- 💥 Aliens fire back — you have to dodge too
+- 🎯 Collision detection for both player and alien bullets
+- 🏆 Score system (+10 per alien killed)
+- ❤️ 3 lives before game over
+- 🎉 Win screen when all aliens are cleared
+- 💀 Game over screen with restart option
+- 🔄 Restart anytime with `R`
+- ⚡ Smooth 60 FPS gameplay loop
+
+---
+
+## 🧠 OOP Design
+
+| Concept | How I Applied It |
 |:--------|:----------------|
 | **Abstraction** | `Entity` is an abstract base class with pure virtual functions |
 | **Inheritance** | `Spaceship`, `Alien`, `Laser`, and `AlienBullets` all inherit from `Entity` |
@@ -43,13 +50,13 @@ Entity  (abstract base class)
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 Space-Invaders-OOP/
 │
 ├── src/
-│   ├── Space_Invaders2.cpp     # Main file — OOP version
+│   ├── Space_Invaders2.cpp     # Main file — OOP version with header files
 │   ├── Space_invaders.cpp      # Original single-file version
 │   ├── Entity.h                # Abstract base class
 │   ├── Spaceship.h             # Player class
@@ -65,7 +72,7 @@ Space-Invaders-OOP/
 
 ---
 
-## Controls
+## 🎮 Controls
 
 | Key | Action |
 |:----|:-------|
@@ -77,10 +84,10 @@ Space-Invaders-OOP/
 
 ---
 
-## How to Run
+## ⚙️ How to Run
 
 **Requirements**
-- G++ compiler with C++17 support
+- G++ with C++17 support
 - [Raylib 5.5](https://www.raylib.com/) installed
 - Windows
 
@@ -98,8 +105,14 @@ g++ -std=c++17 Space_Invaders2.cpp -o Space_Invaders2 -I. -lraylib -lopengl32 -l
 
 ---
 
-## Developer
+## 👨‍💻 Developer
 
 **Kartar Singh**  
 CS Student @ IBA Karachi  
 [github.com/Kartarsingh123](https://github.com/Kartarsingh123)
+
+---
+
+## 📌 Why I Built This
+
+I wanted to go beyond writing code that just works — I wanted to understand *why* you structure it the way you do. Building this game forced me to think about class design, inheritance chains, and how objects talk to each other. The jump from a 300-line single file to a clean multi-class architecture was the most valuable part of the whole project.
