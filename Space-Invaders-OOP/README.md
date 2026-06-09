@@ -5,67 +5,67 @@
 ![OOP](https://img.shields.io/badge/Concepts-OOP-green?style=flat-square)
 ![IBA](https://img.shields.io/badge/Institute-IBA%20Karachi-yellow?style=flat-square)
 
-A Space Invaders arcade game built from scratch in **C++** using the **Raylib** graphics library. Every game element is its own class — all connected through a shared abstract base class.
+A Space Invaders arcade game built from scratch in **C++** using the **Raylib** graphics library. Each game element is implemented as a separate class, structured around a shared abstract base class.
 
-It started as a single-file project, then I refactored it into a proper class hierarchy with header files. That refactor taught me more about OOP design than anything else.
+Initially developed as a single-file project and later refactored into a modular object-oriented design using header files. This refactor significantly improved my understanding of OOP design principles and code architecture.
 
 ---
 
 ## 🚀 Features
 
-- 🚀 Player-controlled spaceship with smooth movement
-- 👾 Alien grid that moves side to side and descends toward you
-- 🔫 Player shooting mechanics
-- 💥 Aliens fire back — you have to dodge too
-- 🎯 Collision detection for both player and alien bullets
-- 🏆 Score system (+10 per alien killed)
-- ❤️ 3 lives before game over
-- 🎉 Win screen when all aliens are cleared
-- 💀 Game over screen with restart option
-- 🔄 Restart anytime with `R`
-- ⚡ Smooth 60 FPS gameplay loop
+- 🚀 Player-controlled spaceship with smooth movement  
+- 👾 Alien grid that moves side to side and gradually descends  
+- 🔫 Player shooting mechanics  
+- 💥 Enemies can fire back, requiring dodging and timing  
+- 🎯 Collision detection for player and enemy projectiles  
+- 🏆 Score system (+10 per alien destroyed)  
+- ❤️ 3 lives before game over  
+- 🎉 Win condition when all aliens are eliminated  
+- 💀 Game over screen with restart option  
+- 🔄 Restart anytime using `R`  
+- ⚡ Smooth 60 FPS gameplay loop  
 
 ---
 
 ## 🧠 OOP Design
 
-| Concept | How I Applied It |
-|:--------|:----------------|
+| Concept | Implementation |
+|:--------|:--------------|
 | **Abstraction** | `Entity` is an abstract base class with pure virtual functions |
-| **Inheritance** | `Spaceship`, `Alien`, `Laser`, and `AlienBullets` all inherit from `Entity` |
-| **Polymorphism** | `Draw()` and `Update()` are virtual in `Entity`, overridden in every subclass |
-| **Encapsulation** | `position` and `speed` are `protected` in the base class, accessed through getters |
-| **Modular Design** | Each class lives in its own `.h` header file |
+| **Inheritance** | `Spaceship`, `Alien`, `Laser`, `AlienBullets` inherit from `Entity` |
+| **Polymorphism** | `Draw()` and `Update()` are overridden in derived classes |
+| **Encapsulation** | Core attributes like position and speed are protected within classes |
+| **Modular Design** | Each class is implemented in separate header files |
 
 ### Class Hierarchy
 
-```
-Entity  (abstract base class)
+```text
+Entity (abstract base class)
 │
-├── Spaceship       → player, moves left/right, fires lasers
-├── Alien           → enemy, moves in formation, fires bullets
-├── Laser           → player bullet, travels upward
-└── AlienBullets    → alien bullet, travels downward
+├── Spaceship
+├── Alien
+├── Laser
+└── AlienBullets
 ```
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 Space-Invaders-OOP/
 │
 ├── src/
-│   ├── Space_Invaders2.cpp     # Main file — OOP version with header files
-│   ├── Space_invaders.cpp      # Original single-file version
-│   ├── Entity.h                # Abstract base class
-│   ├── Spaceship.h             # Player class
-│   ├── Alien.h                 # Alien enemy class
-│   ├── Laser.h                 # Player bullet class
-│   ├── AlienBullets.h          # Alien bullet class
-│   ├── Game.h                  # Main game controller
-│   ├── Rocket.png              # Player sprite
-│   └── alien_2.png             # Alien sprite
+│   ├── Space_Invaders2.cpp
+│   ├── Space_invaders.cpp
+│   ├── Entity.h
+│   ├── Spaceship.h
+│   ├── Alien.h
+│   ├── Laser.h
+│   ├── AlienBullets.h
+│   ├── Game.h
+│   ├── Rocket.png
+│   └── alien_2.png
 │
 └── README.md
 ```
@@ -76,43 +76,43 @@ Space-Invaders-OOP/
 
 | Key | Action |
 |:----|:-------|
-| `A` or `←` | Move left |
-| `D` or `→` | Move right |
+| `A` / `←` | Move left |
+| `D` / `→` | Move right |
 | `Spacebar` | Shoot |
-| `R` | Restart |
+| `R` | Restart game |
 | `Esc` | Quit |
 
 ---
 
 ## ⚙️ How to Run
 
-**Requirements**
-- G++ with C++17 support
-- [Raylib 5.5](https://www.raylib.com/) installed
-- Windows
+### Requirements
+- C++17 compatible compiler (G++)
+- Raylib 5.5
+- Windows OS
 
-**Compile and run**
+### Compile & Run
 
+**Using Terminal:**
 ```bash
 g++ -std=c++17 Space_Invaders2.cpp -o Space_Invaders2 -I. -lraylib -lopengl32 -lgdi32 -lwinmm
 ./Space_Invaders2
 ```
 
-**Using VS Code**
-1. Open the project folder in VS Code
-2. Press `Ctrl + Shift + B` → select **Build Space Invaders 2**
-3. Press `F5` → select **Debug Space Invaders 2**
+**Using VS Code:**
+1. Open project folder in VS Code
+2. Press `Ctrl + Shift + B` to build
+3. Press `F5` to run/debug
 
 ---
 
 ## 👨‍💻 Developer
 
-**Kartar Singh**  
-CS Student @ IBA Karachi  
-[github.com/Kartarsingh123](https://github.com/Kartarsingh123)
+**Kartar Singh** CS Student @ IBA Karachi  
+GitHub: [https://github.com/kartar-singh-cs](https://github.com/kartar-singh-cs)
 
 ---
 
 ## 📌 Why I Built This
 
-I wanted to go beyond writing code that just works — I wanted to understand *why* you structure it the way you do. Building this game forced me to think about class design, inheritance chains, and how objects talk to each other. The jump from a 300-line single file to a clean multi-class architecture was the most valuable part of the whole project.
+This project was built to go beyond writing functional code and focus on proper software design. It helped me understand object-oriented programming principles such as inheritance, abstraction, and polymorphism.
