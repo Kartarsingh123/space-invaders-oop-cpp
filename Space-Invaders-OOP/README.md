@@ -27,6 +27,14 @@ Initially developed as a single-file project and later refactored into a modular
 
 ---
 
+## 📸 Screenshots
+
+### Gameplay
+![Gameplay](assets/gameplay.png)
+
+### Game Over
+![Game Over](assets/gameover.png)
+
 ## 🧠 OOP Design
 
 | Concept | Implementation |
